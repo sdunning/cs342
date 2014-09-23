@@ -1,9 +1,10 @@
 public class Property {
 
-    private float price     = 0;
-    private float bathrooms = 0;
+    private float price     = 0.0;
+    private float bathrooms = 0.0;
     private int   bedrooms  = 0;
     private int   floors    = 0;
+    private float sqrFeet   = 0.0
 
     public float getPrice()     { return price; }
     public float getBathrooms() { return bathrooms; }
