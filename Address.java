@@ -15,13 +15,13 @@ public class Address {
     public String getState()      { return state; }
 
     public void setStreetNum(int streetNum)      { this.streetNum = streetNum; }
-    public void setStreetName(String StreetName) { this.streetName = streetName; }
+    public void setStreetName(String streetName) { this.streetName = streetName; }
     public void setApNum(int apNum)              { this.apNum = apNum; }
     public void setZipCode(int zipCode)          { this.zipCode = zipCode; }
     public void setCity(String city)             { this.city = city; }
     public void setState(String state)           { this.state = state; }
 
-    @override
+    @Override
     public String toString() {
         return String.format("%7d %20s %4d %6d %10s %10s", streetNum, streetName,
                              apNum, zipCode, city, state);
