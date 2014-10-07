@@ -12,6 +12,7 @@ public class Database342 extends JApplet implements ActionListener{
     private static final long serialVersionUID = 1L;
     
     FrontPage frontpage = new FrontPage();
+    AddProperty addProperty = new AddProperty();
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Realtor Assistant");
@@ -23,6 +24,7 @@ public class Database342 extends JApplet implements ActionListener{
         frame.getContentPane().add(app);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        
     }
     
     public Database342() {
@@ -34,13 +36,46 @@ public class Database342 extends JApplet implements ActionListener{
         Container c = getContentPane();
         c.setSize(750, 550);
         c.setLayout(new BorderLayout() );
+        //addProperty.setVisible(false);
+        frontpage.addProperty.addActionListener(this);
+        frontpage.removeProperty.addActionListener(this);
+        frontpage.addClient.addActionListener(this);
+        frontpage.removeClient.addActionListener(this);
+        addProperty.done.addActionListener(this);
+        addProperty.addNew.addActionListener(this);
+        addProperty.cancel.addActionListener(this);
+        //c.add(addProperty, BorderLayout.CENTER);
         c.add(frontpage);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
+        Object obj = e.getSource();
+        if(obj == frontpage.addProperty) {
+            setAllEnabled(false);
+            addProperty.setVisible(true);
+        }
+        if(obj == frontpage.removeProperty) {}
+        if(obj == frontpage.addClient) {}
+        if(obj == frontpage.removeClient) {}
+        if(obj == addProperty.done) {
+            //addProperty.setVisible(false);
+            //setAllEnabled(true);
+        }
+        if(obj == addProperty.addNew) {}
+        if(obj == addProperty.cancel) {
+            addProperty.setVisible(false);
+            setAllEnabled(true);
+        }
         
+    }
+    
+    private void setAllEnabled(boolean enable) {
+        frontpage.addProperty.setEnabled(enable);
+        frontpage.removeProperty.setEnabled(enable);
+        frontpage.addClient.setEnabled(enable);
+        frontpage.removeClient.setEnabled(enable);
     }
 
 }
