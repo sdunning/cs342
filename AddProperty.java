@@ -1,24 +1,22 @@
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
 
 
 public class AddProperty extends JFrame implements ActionListener{
     JPanel north = new JPanel();
     JPanel south = new JPanel();
+    
     JRadioButton residential = new JRadioButton();
     JRadioButton commercial = new JRadioButton();
     JRadioButton ranch = new JRadioButton();
+    
     JTextField price = new JTextField(20);
     JTextField lotSize = new JTextField(20);
     JTextField sqrFeet = new JTextField(20);
     JTextField year = new JTextField(20);
     JTextField status = new JTextField(20);
     JTextField zipCode = new JTextField(20);
-    JButton done = new JButton("Done");
-    JButton addNew = new JButton("Add +");
-    JButton cancel = new JButton("Cancel");
     
     JLabel ePrice = new JLabel("Price:    ");
     JLabel eLotSize = new JLabel("Lot Size: ");
@@ -27,13 +25,17 @@ public class AddProperty extends JFrame implements ActionListener{
     JLabel eStatus = new JLabel("Status:   ");
     JLabel eZipCode = new JLabel("Zip Code: ");
     
+    JButton done = new JButton("Done");
+    JButton addNew = new JButton("Add +");
+    JButton cancel = new JButton("Cancel");
+    
     Font font = new Font("verdana", Font.BOLD, 10);
     
     
     public AddProperty() {
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         
-        setSize(500,500);
+        setSize(600,500);
         residential.addActionListener(this);
         commercial.addActionListener(this);
         ranch.addActionListener(this);

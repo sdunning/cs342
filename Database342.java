@@ -13,6 +13,7 @@ public class Database342 extends JApplet implements ActionListener{
     
     FrontPage frontpage = new FrontPage();
     AddProperty addProperty = new AddProperty();
+    AddClient addClient = new AddClient();
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("Realtor Assistant");
@@ -44,6 +45,10 @@ public class Database342 extends JApplet implements ActionListener{
         addProperty.done.addActionListener(this);
         addProperty.addNew.addActionListener(this);
         addProperty.cancel.addActionListener(this);
+        addClient.done.addActionListener(this);
+        addClient.addNew.addActionListener(this);
+        addClient.cancel.addActionListener(this);
+        
         //c.add(addProperty, BorderLayout.CENTER);
         c.add(frontpage);
     }
@@ -57,7 +62,10 @@ public class Database342 extends JApplet implements ActionListener{
             addProperty.setVisible(true);
         }
         if(obj == frontpage.removeProperty) {}
-        if(obj == frontpage.addClient) {}
+        if(obj == frontpage.addClient) {
+            setAllEnabled(false);
+            addClient.setVisible(true);
+        }
         if(obj == frontpage.removeClient) {}
         if(obj == addProperty.done) {
             //addProperty.setVisible(false);
@@ -66,6 +74,15 @@ public class Database342 extends JApplet implements ActionListener{
         if(obj == addProperty.addNew) {}
         if(obj == addProperty.cancel) {
             addProperty.setVisible(false);
+            setAllEnabled(true);
+        }
+        if(obj == addClient.done) {
+            //addProperty.setVisible(false);
+            //setAllEnabled(true);
+        }
+        if(obj == addClient.addNew) {}
+        if(obj == addClient.cancel) {
+            addClient.setVisible(false);
             setAllEnabled(true);
         }
         
